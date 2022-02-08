@@ -11,7 +11,7 @@ def register(request):
         if registerform.is_valid():
             registerform.save()  
             messages.success(request, 'User Account Created Successfully, Login To Get Started')
-            return redirect('register')
+            return redirect('login')
     else:
         registerform=customregisterform()  
     return render(request,'register.html', {'registerform':registerform})
